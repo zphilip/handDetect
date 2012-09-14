@@ -32,7 +32,7 @@
 *  POSSIBILITY OF SUCH DAMAGE.
 *********************************************************************/
 
-
+#include "StdAfx.h"
 #include <boost/thread/thread.hpp>
 #include <boost/thread/mutex.hpp>
 #include <boost/thread/condition.hpp>
@@ -44,6 +44,7 @@
 #include "geometry_msgs/Point.h"
 #include "geometry_msgs/Transform.h"
 #include <sensor_msgs/PointCloud2.h>
+#include "kinect_utils\body_msgs\msg\Hand.h"
 //#include <sensor_msgs/point_cloud_conversion.h>
 
 //#include <mapping_msgs/PolygonalMap.h>

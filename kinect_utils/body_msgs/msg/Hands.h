@@ -26,6 +26,6 @@ namespace body_msgs
 	unsigned long left_foot;
 	unsigned long right_foot;
 	    
-	};
+}
 }
 #endif
