@@ -2,6 +2,7 @@
 #define kinect_Skeleton_h
 
 #include "ros.h"
+#include "std_msgs/Time.h"
 #include "geometry_msgs/Point32.h"
 #include "geometry_msgs/Point.h"
 #include "geometry_msgs/Transform.h"
@@ -15,7 +16,7 @@ namespace body_msgs
   class Hand : public ros::Msg
   {
     public:
-		//time stamp;
+		pcl::uint64_t stamp; //time stamp
 		int32 seq; 
 			// seq is used for tracking the hand - 
 			// if the seq number is the same, you can assume that the hand is the same as previously seen
@@ -31,7 +32,6 @@ namespace body_msgs
 		//paddle -  fingers together and straight
 		//fist   
 		std::string state;
-	};
 
     virtual int serialize(unsigned char *outbuffer)
     {
@@ -46,6 +46,6 @@ namespace body_msgs
     };
 
     const char * getType(){ return "body_msgs/Hand"; };
-
+	};
 }
 #endif

@@ -1,7 +1,7 @@
 #ifndef ros_Time_h
 #define ros_Time_h
 
-#include "WProgram.h"
+//#include "WProgram.h"
 #include "ros.h"
 #include "ros/time.h"
 
@@ -47,10 +47,10 @@ namespace std_msgs
         unsigned long base;
       } u_sec;
       u_sec.base = 0;
-      u_sec.base |= ((typeof(u_sec.base)) (*(inbuffer + offset + 0))) << (8 * 0);
-      u_sec.base |= ((typeof(u_sec.base)) (*(inbuffer + offset + 1))) << (8 * 1);
-      u_sec.base |= ((typeof(u_sec.base)) (*(inbuffer + offset + 2))) << (8 * 2);
-      u_sec.base |= ((typeof(u_sec.base)) (*(inbuffer + offset + 3))) << (8 * 3);
+      u_sec.base |= ((unsigned long) (*(inbuffer + offset + 0))) << (8 * 0);
+      u_sec.base |= ((unsigned long) (*(inbuffer + offset + 1))) << (8 * 1);
+      u_sec.base |= ((unsigned long) (*(inbuffer + offset + 2))) << (8 * 2);
+      u_sec.base |= ((unsigned long) (*(inbuffer + offset + 3))) << (8 * 3);
       this->data.sec = u_sec.real;
       offset += sizeof(this->data.sec);
       union {
@@ -58,10 +58,10 @@ namespace std_msgs
         unsigned long base;
       } u_nsec;
       u_nsec.base = 0;
-      u_nsec.base |= ((typeof(u_nsec.base)) (*(inbuffer + offset + 0))) << (8 * 0);
-      u_nsec.base |= ((typeof(u_nsec.base)) (*(inbuffer + offset + 1))) << (8 * 1);
-      u_nsec.base |= ((typeof(u_nsec.base)) (*(inbuffer + offset + 2))) << (8 * 2);
-      u_nsec.base |= ((typeof(u_nsec.base)) (*(inbuffer + offset + 3))) << (8 * 3);
+      u_nsec.base |= ((unsigned long) (*(inbuffer + offset + 0))) << (8 * 0);
+      u_nsec.base |= ((unsigned long) (*(inbuffer + offset + 1))) << (8 * 1);
+      u_nsec.base |= ((unsigned long) (*(inbuffer + offset + 2))) << (8 * 2);
+      u_nsec.base |= ((unsigned long) (*(inbuffer + offset + 3))) << (8 * 3);
       this->data.nsec = u_nsec.real;
       offset += sizeof(this->data.nsec);
      return offset;
