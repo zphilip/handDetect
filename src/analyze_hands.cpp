@@ -36,23 +36,17 @@
 #include <boost/thread/thread.hpp>
 #include <boost/thread/mutex.hpp>
 #include <boost/thread/condition.hpp>
-#include <Eigen/StdVector>
 
-#include "geometry_msgs/Point32.h"
-#include "geometry_msgs/Point.h"
-#include "geometry_msgs/Polygon.h"
-//#include "kinect_utils\body_msgs\msg\Hand.h"
-#include "body_msgs/Hand.h"
 #include <ros/ros.h>
-#include <tf/transform_listener.h>
+//#include <tf/transform_listener.h>
+#include <sensor_msgs/PointCloud.h>
 #include <mapping_msgs/PolygonalMap.h>
-#include <nnn/nnn.hpp>
-
-//#include <pcl_tools/pcl_utils.h>
-//#include <pcl_tools/segfast.hpp>
-
-#include <sensor_msgs/PointCloud2.h>
+#include <body_msgs/Hands.h>
 #include <sensor_msgs/point_cloud_conversion.h>
+#include <pcl_tools/pcl_utils.h>
+#include <nnn/nnn.hpp>
+#include <pcl_tools/segfast.hpp>
+
 
 #include "pcl/io/pcd_io.h"
 #include "pcl/point_types.h"
@@ -69,6 +63,9 @@
 #include <pcl/sample_consensus/method_types.h>
 #include <pcl/sample_consensus/model_types.h>
 #include <pcl/segmentation/sac_segmentation.h>
+
+
+#include <body_msgs/Skeletons.h>
 
 float gdist(pcl::PointXYZ pt, const Eigen::Vector4f &v){
    return sqrt((pt.x-v(0))*(pt.x-v(0))+(pt.y-v(1))*(pt.y-v(1))+(pt.z-v(2))*(pt.z-v(2))); //
